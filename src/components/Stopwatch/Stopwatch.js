@@ -25,7 +25,7 @@ const Stopwatch = () => {
     if (timeline.activities.length === 0) return '';
     if (!results) return '';
     if (!results.timer) return '';
-    return <div className={`stopwatch ${results.timer.isRest && !isCompleted() ? 'resting' : ''}`}>
+    return <div className={`stopwatch ${ isCompleted() ? 'completed' : results.timer.isRest ? 'resting' : ''}`}>
         {
             isCounterActive ? <ActivityStatus /> : ''
         }

@@ -7,6 +7,9 @@
   
   --secondary-color: #7C4DFF;
   --secondary-color-dark: #6200EA;
+  
+  --white-color: rgba(231,231,231,1);
+  --white-color-dark: rgba(186,186,186,1);
 
   --main-bg-color: rgba(15,15,15,1); 
   --main-surface-color: rgba(31,31,31,1); 
@@ -363,4 +366,21 @@ button[disabled]:active svg {
 
 .resting .active-bg-dark {
   background-color: var(--secondary-color-dark) !important;
+}
+
+
+
+
+.completed .active-font {
+  color: var(--white-color) !important;
+}
+.completed .active-font-dark {
+  color: var(--white-color-dark) !important;
+}
+.completed .active-bg {
+  background-color: var(--white-color) !important;
+}
+
+.completed .active-bg-dark {
+  background-color: var(--white-color-dark) !important;
 }
