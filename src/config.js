@@ -16,26 +16,26 @@ export const initActivitiesState = [
         name: 'Stopwatch',
         ascending: true,
         rounds: 1,
-        timers: [{ h: 0, m: 0, s: 7 }]
+        timers: [{ h: 0, m: 2, s: 30 }]
     },
     {
         id: 'countdown',
         name: 'Countdown',
         ascending: false,
         rounds: 1,
-        timers: [{ h: 0, m: 0, s: 6 }]
+        timers: [{ h: 0, m: 2, s: 30 }]
     }, {
         id: 'xy',
         name: 'XY',
         ascending: false,
-        rounds: 2,
-        timers: [{ h: 0, m: 0, s: 5 }]
+        rounds: 10,
+        timers: [{ h: 0, m: 1, s: 10 }]
     }, {
         id: 'tabata',
         name: 'Tabata',
         ascending: false,
-        rounds: 3,
-        timers: [{ h: 0, m: 0, s: 4 }, { h: 0, m: 0, s: 3 }]
+        rounds: 8,
+        timers: [{ h: 0, m: 0, s: 20 }, { h: 0, m: 0, s: 10 }]
     }
 ]
 

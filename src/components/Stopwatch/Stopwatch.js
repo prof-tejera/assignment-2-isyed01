@@ -9,7 +9,7 @@ let handleReset;
 let checkIfRunning;
 
 const Stopwatch = () => {
-    const { isCounterActive, timeline, results, status, isRunning,  tick, reset, } = useApp();
+    const { isCounterActive, timeline, results, status, isRunning,  isCompleted, tick, reset, } = useApp();
    
     handleReset = () =>  reset() 
     checkIfRunning = () => isRunning
@@ -25,7 +25,7 @@ const Stopwatch = () => {
     if (timeline.activities.length === 0) return '';
     if (!results) return '';
     if (!results.timer) return '';
-    return <div className={`stopwatch ${results.timer.isRest ? 'resting' : ''}`}>
+    return <div className={`stopwatch ${results.timer.isRest && !isCompleted() ? 'resting' : ''}`}>
         {
             isCounterActive ? <ActivityStatus /> : ''
         }

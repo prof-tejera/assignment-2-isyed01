@@ -5,12 +5,12 @@ import DisplayTime from "./DisplayTime/DisplayTime";
 
 
 const Status = () => {
-    const { results, cancel } = useApp();
+    const { results, cancel, isCompleted } = useApp();
     const handleCancel = () => cancel()
     return <>
         <ProgressLine percent={results.routine.percent} />
         <div className='hidden-toolbar'>
-            <div className='active-font' style={{ visibility: results.timer.isRest ? 'visible' :'hidden' }}>Resting...</div>
+            <div className='active-font' style={{ visibility: results.timer.isRest && !isCompleted() ? 'visible' :'hidden' }}>Resting...</div>
             <div>
                 <IconButton icon='x-lg' onClick={handleCancel} />
             </div>
