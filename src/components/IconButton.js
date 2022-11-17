@@ -1,5 +1,5 @@
 import SVGIcon from './SVGIcon';
-import { SVG_ICON_DEFAULT_SIZE } from '../constants'
+//import { SVG_ICON_DEFAULT_SIZE } from '../constants'
 
 
 ///////////////////////////////////////////////////////////////

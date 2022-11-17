@@ -4,16 +4,24 @@ import ActivityStatus from "./Status";
 import Controls from "./Controls";
 import './Stopwatch.css';
 
+
+let handleReset;
+let checkIfRunning;
+
 const Stopwatch = () => {
     const { isCounterActive, timeline, results, status, isRunning,  tick, reset, } = useApp();
-    const handleTick = () => tick()
-    useEffect(() => {
-        isRunning() && setTimeout(handleTick, 100);
-    }, [status])
+   
+    handleReset = () =>  reset() 
+    checkIfRunning = () => isRunning
 
     useEffect(() => {
-        return () => { reset() }
+        checkIfRunning() && setTimeout(tick, 100);
+    }, [status, tick])
+
+    useEffect(() => {
+        return handleReset
     }, []);
+
     if (timeline.activities.length === 0) return '';
     if (!results) return '';
     if (!results.timer) return '';

@@ -4,7 +4,7 @@ import { DECIMAL_PRECISION } from '../../../config';
 
 const CSS_DEFAULT_CLASS_NAME = '';
 const CSS_ACTIVE_CLASS_NAME = 'active-font';
-const CSS_COMPLETE_CLASS_NAME = 'active-font-dark';
+//const CSS_COMPLETE_CLASS_NAME = 'active-font-dark';
 
 const zerofill = (numDigits, value) => `000${value}`.slice(-numDigits);
 
