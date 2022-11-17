@@ -15,10 +15,6 @@ const Container = styled.div`
   width: 100%;
 `;
 
-const Title = styled.div`
-  font-size: 2rem;
-`;
-
 /**
  * You can document your components by using the DocumentComponent component
  */

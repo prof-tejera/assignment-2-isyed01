@@ -1,5 +1,5 @@
-import { useContext, useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useApp } from "../context/app";
 
 import SVGIcon from "../components/SVGIcon";
