@@ -4,7 +4,6 @@ import Navigation from './components/Navigation'
 import Routine from "./views/Routine";
 import AddActivity from "./views/AddActivity";
 import DocumentationView from "./views/DocumentationView";
-import NoRouteMatch from "./views/NoRouteMatch";
 
 const App = () =>
   <AppProvider>
@@ -15,7 +14,7 @@ const App = () =>
             <Route path="/" element={<Routine />} />
             <Route path="/add" element={<AddActivity />} />
             <Route path="/docs" element={<DocumentationView />} />
-            <Route path="*" element={<NoRouteMatch />} />
+            <Route path="*" element={<Routine />} />
           </Routes>
         </div>
       </Router>
