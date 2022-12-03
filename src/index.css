@@ -1,0 +1,386 @@
+
+
+:root {
+  /* vars: colors */
+  --primary-color: #64FFDA;
+  --primary-color-dark: #009688;
+  
+  --secondary-color: #7C4DFF;
+  --secondary-color-dark: #6200EA;
+  
+  --white-color: rgba(231,231,231,1);
+  --white-color-dark: rgba(186,186,186,1);
+
+  --main-bg-color: rgba(15,15,15,1); 
+  --main-surface-color: rgba(31,31,31,1); 
+  --main-font-color: rgba(231,231,231,1);
+  --main-border-color: rgba(231,231,231,0.5);
+  --main-border-color-light: rgba(231,231,231,0.25);
+  
+  /* vars: borders */
+  --main-border-width: 0.125rem;
+  
+  /* vars: shadows */
+  --shadow-depth-1: 0 0 0.25rem 0 rgba(0,0,0,.25);
+  --shadow-depth-2: 0 0 0.25rem 0 rgba(0,0,0,.25);
+  --shadow-depth-3: 0 0 0.25rem 0 rgba(0,0,0,.25);
+
+  /* vars: Other */
+  --navigation-drawer-width: clamp(280px, 80vw, 340px);
+
+  /* top-level styles */
+  font-size: clamp( 16px, calc(100vh/60), 18px );
+  background-color: var(--main-bg-color);
+  color: var(--main-font-color);
+
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 { font-weight: normal; margin:0; padding:0; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.25rem; opacity:0.7 }
+h3 { font-size: 1.125rem; }
+small { font-size: 0.75rem }
+
+a {
+  color:var(--main-font-color);
+  text-decoration:none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+
+
+/**********************************************
+    Navigation 
+*/
+
+
+aside.menu {
+  position:fixed;
+  overflow:hidden;
+  z-index:100;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  background-color:rgba(0,0,0,0.35);
+  transition-duration: 0.4s;
+}
+
+
+aside.menu.hide {
+  left: calc(-1.1* var(--navigation-drawer-width));
+  width:1%;
+  background-color:rgba(0,0,0,0.0);
+}
+
+
+aside.menu nav {
+  padding-top:1.5rem;
+  width:var(--navigation-drawer-width);
+  height:100vh;
+  background-color:#121212;
+  box-shadow: 0 0 37px 14px rgba(0,0,0,1);
+
+}
+
+
+aside.menu nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+aside.menu nav a {
+  display:block;
+  border-radius: 1.5rem;
+  padding:0.5rem 1rem;
+  margin: 0.25rem 1rem;
+
+
+}
+
+
+aside.menu nav a.active {
+  background-color:var(--primary-color-darkest);
+
+}
+
+
+/**********************************************
+    view 
+*/
+
+div.view {
+  display:flex;
+  flex-direction: column;
+  width:100%;
+  height:100vh;
+
+}
+
+div.view header, div.view footer {
+  flex-shrink: 1;
+}
+
+
+div.view main {
+  flex-grow:1;
+}
+
+svg {
+  fill: var(--main-font-color);
+  height: 2.5rem !important;
+}
+
+svg.sm {
+  fill: var(--main-font-color);
+  height: 1.5rem !important;
+}
+
+svg.lg {
+  fill: var(--main-font-color);
+  height: 3.5rem !important;
+}
+
+
+/**********************************************
+    Header 
+*/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: var(--shadow-depth-1);
+  background-color: var(--main-surface-color);
+}
+
+header div {
+  display: flex;
+  align-items: center;
+
+}
+
+header h1 {
+  display: inline-block;
+  padding: 0;
+  margin:0 0 0 1rem;
+}
+
+header button {
+    color: var(--main-font-color);
+    margin:0;
+}
+
+header button svg {
+  fill: var(--main-font-color);
+}
+
+/**********************************************
+    Main Content
+*/
+
+main {}
+
+main div.panel {
+  /*border-radius: 2rem;*/
+  margin:0.75rem 1.5rem;
+  padding:0.75rem 1.5rem;
+  background-color: var(--main-surface-color);
+  box-shadow: var(--shadow-depth-1);
+}
+
+main div.panel:first-child {
+  margin-top:1.5rem;
+
+}
+
+main div.panel:last-child {
+  margin-bottom:1.5rem;
+
+}
+
+main div.panel-header {
+  display:flex;
+  flex-direction: row;
+  gap:1rem;
+  justify-content: space-between;
+  align-items:center;
+  
+}
+
+main div.panel-header *:first-child {
+  padding-left:0.5rem;
+}
+main div.panel-header *:last-child {
+  padding-right:0.25rem;
+}
+
+main div.panel h2 {
+  flex-grow:1;
+  
+}
+
+
+/**********************************************
+    list
+*/
+
+
+ul.list {
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+
+ul.list li {
+  display:flex;
+  flex-direction: row;
+  gap:1rem;
+  justify-content: space-between;
+  align-items:center;
+  border-top:solid var(--main-border-width) var(--main-border-color-light);;
+
+}
+
+
+ul.list li:last-child {
+  border-bottom:solid var(--main-border-width) var(--main-border-color-light);
+
+}
+
+ul.list li div:first-child {
+  padding-left:0.5rem;
+}
+ul.list li div:last-child {
+  padding-right:0.5rem;
+}
+
+ul.list li.active {
+  background-color: var(--primary-color-darkest);
+}
+
+
+ul.list li.over-top {
+  border-top: solid 3px var(--primary-color);
+}
+
+ul.list li.over-bottom {
+  border-bottom: solid 3px var(--primary-color);
+}
+
+ul.list li div.main {
+  flex-grow: 1;
+}
+ul.list li div.main p {
+  display:block;
+}
+
+/*
+
+Buttons 
+
+*/
+
+button  {
+  font-size: 1rem;
+  padding: 0.5rem 0.5rem;
+  color:#fff;
+  background-color: transparent;
+  border:none;
+  border-radius: 2rem;
+}
+
+button svg {
+  opacity:0.68;
+  opacity:0.68;
+}
+
+button:hover svg {
+  opacity:1;
+}
+
+button:active {
+  background-color:rgba(83, 240, 234, 0.25);
+}
+
+button[disabled]:hover, 
+button[disabled]:active {
+  background-color: transparent;
+}
+
+button[disabled] svg,
+button[disabled]:hover svg,
+button[disabled]:active svg {
+  fill:rgba(255, 255, 255, 0.35);
+} 
+
+
+/*
+    control inactive and active colors
+*/
+
+.active-font {
+  color: var(--primary-color) !important;
+}
+.active-font-dark {
+  color: var(--primary-color-dark) !important;
+}
+.active-bg {
+  background-color: var(--primary-color) !important;
+}
+.active-bg-dark {
+  background-color: var(--primary-color-dark) !important;
+}
+
+
+
+.resting .active-font {
+  color: var(--secondary-color) !important;
+}
+.resting .active-font-dark {
+  color: var(--secondary-color-dark) !important;
+}
+.resting .active-bg {
+  background-color: var(--secondary-color) !important;
+}
+
+.resting .active-bg-dark {
+  background-color: var(--secondary-color-dark) !important;
+}
+
+
+
+
+.completed .active-font {
+  color: var(--white-color) !important;
+}
+.completed .active-font-dark {
+  color: var(--white-color-dark) !important;
+}
+.completed .active-bg {
+  background-color: var(--white-color) !important;
+}
+
+.completed .active-bg-dark {
+  background-color: var(--white-color-dark) !important;
+}

@@ -42,6 +42,7 @@ As you have noticed this repository is empty. To begin this assignment you must 
 - A user can configure (combination of any timers in any order) and execute a workout 
 - All four timers must be functional: stopwatch, countdown, tabata, and XY.
 - Routing must be configured to support the home route (`/`) and add route (`/add`)
+- https://prof-tejera.github.io/assignment-2-isyed01
 
 ## Grading Rubric
 - A workout can be configured with any combination of timers
