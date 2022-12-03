@@ -9,7 +9,8 @@ const AddTimer = () => {
     const { addRoutineActivity, activities } = useApp();
     const [ added, setAdded ] = useState(false);
     const navigate = useNavigate();
-    
+    const handleActivityDetails = (id) => navigate(`/${id}`)
+
     const handleAddActivity = (activityId) => {
         addRoutineActivity(activityId)
         setAdded(true)
@@ -36,7 +37,7 @@ const AddTimer = () => {
                                 <div>
                                     <SVGIcon icon='stopwatch' className='list-icon sm' />
                                 </div>
-                                <div className='main'>
+                                <div className='main' onClick={()=>handleActivityDetails(item.id)}>
                                     <h3>{item.name}</h3>
                                 </div>
                                 <div>

@@ -10,6 +10,7 @@ const RoutineActivities = () => {
     const navigate = useNavigate()
     const handleReorderActivities = (reorderedActivities) => reorderRoutineActivities(reorderedActivities)
     const handleRemoveActivity = (index) => removeRoutineActivity(index)
+    const handleActivityDetails = (id) => navigate(`/${id}`)
     return <>
 
         <div className='panel'>
@@ -30,11 +31,11 @@ const RoutineActivities = () => {
                 <ReorderableListItems items={timeline.activities} handleUpdate={handleReorderActivities}>
                     {
                         timeline.activities.map((item, index) =>
-                            <li key={index} id={item.id} >
+                            <li key={index} id={item.id}>
                                 <div>
                                     <SVGIcon icon='list' className='list-icon sm' />
                                 </div>
-                                <div className='main'>
+                                <div className='main' onClick={()=>handleActivityDetails(item.id)}>
                                     <h3>{item.name}</h3>
                                 </div>
                                 <div>

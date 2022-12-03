@@ -6,15 +6,16 @@ const IntegerInput = styled.input.attrs(
         style: {
             fontSize:       `${ props.fontSize }rem` || '1.5rem',
             height:         `${ props.fontSize * 1.125 }rem` || `1.75rem`,
-            width:          `${ (props.fontSize *.65) * props.chars }rem` || `2rem`,
-            padding:        `${ props.fontSize * 0.2 }rem` || `0.25rem`,
-            margin:         `${ props.fontSize * 0.25 }rem` || `0.35rem`,
+            width:          `${ (props.fontSize *.75) * props.chars }rem` || `2rem`,
+            padding:        `${ props.fontSize * 0.5 }rem` || `0.25rem`,
+            margin:         props.wrapped ? `${ props.fontSize * 0.5 }rem` || `0.35rem` : 0,
             color:          props.fontColor || 'whitesmoke',
             backgroundColor: props.bgColor || 'black',
         },
     }))`
     text-align:center;
     border:none;
+    border-radius:0.5rem;
 
     &:focus{
         outline: none;
@@ -69,7 +70,7 @@ const toInteger = ({ min=0, max=60, input }) => {
  * @returns IntegerField component
  */
 
-const IntegerField = ({ min = 0, max = 99, value=0, fontSize=1.5, fontColor='whitesmoke', bgColor='black', onChange=()=>{} }) => {
+const IntegerField = ({ min = 0, max = 99, value=0, onChange=()=>{}, fontSize=1.5, fontColor='whitesmoke', bgColor='#212121', wrapped=true }) => {
     
     const handleChange = e => onChange( toInteger({ min, max, input: e.target.value }) )
 
@@ -82,6 +83,7 @@ const IntegerField = ({ min = 0, max = 99, value=0, fontSize=1.5, fontColor='whi
         fontSize={fontSize}
         fontColor={fontColor}
         bgColor={bgColor}
+        wrapped={wrapped}
         
     />
 }

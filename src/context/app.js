@@ -20,6 +20,21 @@ export const AppProvider = ({ children }) => {
     const statusRef = useRef({ ...initStatus })
     const [ status, setStatus ] = useState(statusRef.current);
 
+    const updateActivity = ({ id, prop, value}) => {
+        console.log(`id=${id}`)
+        console.log(`prop=${ prop }`)
+        console.log(`value=${ value }`)
+
+        const activity = activities.find(item=>item.id===id)
+        const updatedActivity = { ...activity, [prop]:value }
+        console.log(updatedActivity)
+        const updatedActivities = activities.map(item=> item.id===id ? updatedActivity : item)
+        console.log(updatedActivities)
+        setActivities([ ...updatedActivities ])
+    }
+
+
+
     /* Routine Activity list */
 
     const reorderRoutineActivities = (reorderedActivities) => {
@@ -130,7 +145,7 @@ export const AppProvider = ({ children }) => {
             isNavigationOpen, setIsNavigationOpen, toggleNavigation,
             isCounterActive, setCounterIsActive, toggleCounterActive,
             routines, updateRoutines: setRoutines,
-            activities, updateActivities: setActivities, reorderRoutineActivities, removeRoutineActivity, addRoutineActivity,
+            activities, updateActivity, reorderRoutineActivities, removeRoutineActivity, addRoutineActivity,
             routineIndex, switchRoutine: setRoutineIndex,
             timeline, 
             results, setResults, statusRef, status, setStatus, updateStatus, 
@@ -148,8 +163,8 @@ export const useApp = () => {
         isCounterActive, setCounterIsActive, toggleCounterActive,
         routines,
         updateRoutines,
-        activities,
-        updateActivities, reorderRoutineActivities, removeRoutineActivity, addRoutineActivity,
+        activities, 
+        updateActivity, reorderRoutineActivities, removeRoutineActivity, addRoutineActivity,
         routineIndex,
         switchRoutine,
         timeline, 
@@ -160,8 +175,8 @@ export const useApp = () => {
         isCounterActive, setCounterIsActive, toggleCounterActive,
         routines,
         updateRoutines,
-        activities,
-        updateActivities, reorderRoutineActivities, removeRoutineActivity, addRoutineActivity,
+        activities, 
+        updateActivity, reorderRoutineActivities, removeRoutineActivity, addRoutineActivity,
         routineIndex,
         switchRoutine,
         timeline, 
