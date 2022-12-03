@@ -10,7 +10,7 @@ const RoutineActivities = () => {
     const navigate = useNavigate()
     const handleReorderActivities = (reorderedActivities) => reorderRoutineActivities(reorderedActivities)
     const handleRemoveActivity = (index) => removeRoutineActivity(index)
-    const handleActivityDetails = (id) => navigate(`/${id}`)
+    const handleActivityDetails = (id) => navigate(`/activity/${id}`)
     return <>
 
         <div className='panel'>

@@ -9,7 +9,7 @@ const AddTimer = () => {
     const { addRoutineActivity, activities } = useApp();
     const [ added, setAdded ] = useState(false);
     const navigate = useNavigate();
-    const handleActivityDetails = (id) => navigate(`/${id}`)
+    const handleActivityDetails = (id) => navigate(`/activity/${id}`)
 
     const handleAddActivity = (activityId) => {
         addRoutineActivity(activityId)

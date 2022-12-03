@@ -12,8 +12,8 @@ const App = () =>
       <Navigation />
       <div className='view'>
         <Routes>
-          <Route path="/:activityId" element={<Activity />} />
           <Route path="/" element={<Routine />} />
+          <Route path="/activity/:activityId" element={<Activity />} />
           <Route path="/add" element={<AddActivity />} />
           <Route path="/docs" element={<DocumentationView />} />
           <Route path="*" element={<Routine />} />
