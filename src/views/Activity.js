@@ -28,7 +28,7 @@ const Activity = () => {
     const handleRounds = (value) => updateActivity({ id: activityId, prop: 'rounds', value })
     const handleAscending = (value) => updateActivity({ id: activityId, prop: 'ascending', value })
 
-    return <>
+    return !activity ? '' : <>
         <header>
             <div>
                 <IconButton icon='arrow-left' onClick={() => navigate(-1)} />
